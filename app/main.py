@@ -27,6 +27,6 @@ app.include_router(vote.router)
 
 @app.get("/")
 def root():
-    return {'message': "my_posts"}
+    return {'message': "Ramadan Mubarak"}
 
 

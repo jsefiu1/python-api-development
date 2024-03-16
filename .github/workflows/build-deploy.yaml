@@ -9,8 +9,18 @@ on:
   # pull_request:
   #   branches:
   #     - "test_branch"
+
 jobs:
   job1:
+    env:
+      DATABASE_HOSTNAME: localhost
+      DATABASE_PORT: 5432
+      DATABASE_PASSWORD: postgres
+      DATABASE_NAME: fastapi
+      DATABASE_USERNAME: postgres
+      SECRET_KEY: 87d10db4f5e00604fbea3fcd6771ce42e7c356738a0ba2aa9268338c54f83dfe
+      ALGORITHM: HS256
+      ACCESS_TOKEN_EXPIRE_MINUTES: 30
     runs-on: ubuntu-latest
     steps:
       - name: pulling git repo
@@ -29,3 +39,4 @@ jobs:
         run: |
           pip install pytest 
           pytest
+  job2:
